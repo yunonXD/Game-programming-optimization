@@ -2,19 +2,19 @@
 
 struct Item
 {
-	Item() : id(-100){}
+	Item() : mCount(0), id(-100){}
 
 	int id;
+	int mCount;
 };
 
 class Inventory
 {
+
 public:
 	Inventory(int itemNum);
 	Inventory(const Inventory& Copy);
 	~Inventory();
-
-public:
 	Inventory& operator=(const Inventory& rhs);
 	Item& operator[](const int index);
 
