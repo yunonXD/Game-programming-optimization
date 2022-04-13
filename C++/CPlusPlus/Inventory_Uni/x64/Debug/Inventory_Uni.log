@@ -1,8 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(Inventory.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
-  Inventory.cpp
-C:\Users\yunon\Documents\GitHub\Game-programming-optimization\C++\CPlusPlus\Inventory_Uni\Inventory.cpp(13,1): error C2084: 'Inventory::Inventory(const Inventory &)' 함수에 이미 본문이 있습니다.
-C:\Users\yunon\Documents\GitHub\Game-programming-optimization\C++\CPlusPlus\Inventory_Uni\Inventory.h(21): message : '{ctor}'의 이전 정의를 참조하십시오.
-C:\Users\yunon\Documents\GitHub\Game-programming-optimization\C++\CPlusPlus\Inventory_Uni\Inventory.cpp(50,1): error C2084: 'Inventory::~Inventory(void)' 함수에 이미 본문이 있습니다.
-C:\Users\yunon\Documents\GitHub\Game-programming-optimization\C++\CPlusPlus\Inventory_Uni\Inventory.h(22): message : '{dtor}'의 이전 정의를 참조하십시오.
-  main.cpp
-  코드를 생성하고 있습니다...
