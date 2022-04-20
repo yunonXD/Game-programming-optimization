@@ -1,0 +1,8 @@
+﻿  INetworkInterface.cpp
+  Inventory.cpp
+C:\Users\NOW2-210-12\Documents\GitHub\Game-programming-optimization\GoogeTest\InventoryEX\Inventory.cpp(91,29): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
+  gtest-all.cc
+  gmock-all.cc
+  코드를 생성하고 있습니다...
+  InventoryEX.vcxproj -> C:\Users\NOW2-210-12\Documents\GitHub\Game-programming-optimization\GoogeTest\Debug\InventoryEX.lib

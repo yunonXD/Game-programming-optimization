@@ -1,7 +1,5 @@
-﻿  Customer.cpp
-  GameTitle.cpp
-  RefactoringTest_origin.cpp
+﻿  GameTitle.cpp
+  Price.cpp
   RegularPrice.cpp
-  Rental.cpp
   코드를 생성하고 있습니다...
   GameTitleRental.vcxproj -> C:\Users\NOW2-210-12\Documents\GitHub\Game-programming-optimization\C++\CPlusPlus\x64\Debug\GameTitleRental.lib
