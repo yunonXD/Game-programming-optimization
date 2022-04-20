@@ -11,8 +11,8 @@ Rental inputRentalInfo();
 int main()
 {
     std::cout << "Hello Enter Your Name!\n";
-    std::string customerName;
-    std::cin >> customerName;
+    std::wstring customerName;
+    std::wcin >> customerName;
 
     Customer customer1(customerName);
 
@@ -32,44 +32,44 @@ int main()
     }
 
     std::cout << "----- ----- statement ----- -----" << std::endl;
-    std::string statement = customer1.statement();
-    std::cout << statement << std::endl;
+    std::wstring statement = customer1.statement();
+    std::wcout << statement << std::endl;
 
 
     //// 테스트 프로젝트 용
-    //std::string statement01 = "pororo 고객님의 대여 기록\n\tGTA5\t3.500000\n\tMonsterHunter: RISE\t15.000000\n누적 대여료: 18.500000\n적립 포인트: 2\n"; // 1,2,3 + 3,0,5
-    //std::string statement02 = "luffy 고객님의 대여 기록\n\tGTA5\t1.500000\n\tCOOKIERUN:KINGDOM\t2.000000\n누적 대여료: 3.500000\n적립 포인트: 2\n"; // 1,1,1 + 2,2,2
+    //std::wstring statement01 = L"pororo 고객님의 대여 기록\n\tGTA5\t3.500000\n\tMonsterHunter: RISE\t15.000000\n누적 대여료: 18.500000\n적립 포인트: 2\n"; // 1,2,3 + 3,0,5
+    //std::wstring statement02 = L"luffy 고객님의 대여 기록\n\tGTA5\t1.500000\n\tCOOKIERUN:KINGDOM\t2.000000\n누적 대여료: 3.500000\n적립 포인트: 2\n"; // 1,1,1 + 2,2,2
 
-    //std::cout << statement01 << std::endl;
+    //std::wcout << statement01 << std::endl;
 
     //if (statement == statement02) {
-    //    std::cout << "same result" << std::endl;
+    //    std::wcout << L"same result" << std::endl;
     //}
 
 
 }
 
 
-std::string makeGameTitleName()
+std::wstring makeGameTitleName()
 {
-    static const std::string gameTitle1 = "GTA5";
-    static const std::string gameTitle2 = "COOKIERUN:KINGDOM";
-    static const std::string gameTitle3 = "MonsterHunter: RISE";
-    static const std::string gameTitle4 = "LOL";
-    static const std::string gameTitle5 = "BATTLE GROUNDS";
-    static const std::string gameTitle6 = "UNCHARTED4";
+    static const std::wstring gameTitle1 = L"GTA5";
+    static const std::wstring gameTitle2 = L"COOKIERUN:KINGDOM";
+    static const std::wstring gameTitle3 = L"MonsterHunter: RISE";
+    static const std::wstring gameTitle4 = L"LOL";
+    static const std::wstring gameTitle5 = L"BATTLE GROUNDS";
+    static const std::wstring gameTitle6 = L"UNCHARTED4";
 
     std::cout << "----- ----- Game Titles ----- -----" << std::endl;
-    std::cout << "1) " << gameTitle1 << std::endl;
-    std::cout << "2) " << gameTitle2 << std::endl;
-    std::cout << "3) " << gameTitle3 << std::endl;
-    std::cout << "4) " << gameTitle4 << std::endl;
-    std::cout << "5) " << gameTitle5 << std::endl;
-    std::cout << "6) " << gameTitle6 << std::endl;
+    std::wcout << L"1) " << gameTitle1 << std::endl;
+    std::wcout << L"2) " << gameTitle2 << std::endl;
+    std::wcout << L"3) " << gameTitle3 << std::endl;
+    std::wcout << L"4) " << gameTitle4 << std::endl;
+    std::wcout << L"5) " << gameTitle5 << std::endl;
+    std::wcout << L"6) " << gameTitle6 << std::endl;
     std::cout << "Enter GameTitle (1~6 or Name): ";
 
-    std::string gameTitleName;
-    std::cin >> gameTitleName;
+    std::wstring gameTitleName;
+    std::wcin >> gameTitleName;
     int gameTitleNo = 0;
     try {
         gameTitleNo = std::stoi(gameTitleName);
@@ -104,7 +104,7 @@ std::string makeGameTitleName()
 
 GameTitle inputGameTitleInfo()
 {
-    std::string gameTitleName = makeGameTitleName();
+    std::wstring gameTitleName = makeGameTitleName();
     std::cout << "Enter PriceCode(0:Regular, 1:NewReleased, 2:POPULAR) ";
     int priceCode;
     std::cin >> priceCode;

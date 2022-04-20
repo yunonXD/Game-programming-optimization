@@ -3,6 +3,7 @@
 #include <string>
 
 class Price;
+
 class GameTitle
 {
 public:
@@ -10,22 +11,18 @@ public:
 	static const int REGULAR = 0;
 	static const int NEW_RELEASE = 1;
 public:
-	GameTitle(const std::string& title, int priceCode);
+	GameTitle(const std::wstring& title, int priceCode);
 
 	double getCharge(int daysRented) const;
 	int getFrequentRenterPoints(int daysRented) const;
 
-	int getPriceCode() const {
-
-		return price_-> getPriceCode;
-	}
-	const std::string& getTitle() const { return title_; }
+	int getPriceCode() const;
+	const std::wstring& getTitle() const { return title_; }
 
 private:
 	void setPriceCode(int priceCode);
-
 private:
-	std::string title_;
+	std::wstring title_;
 	//int priceCode_;
 	Price* price_;
 };

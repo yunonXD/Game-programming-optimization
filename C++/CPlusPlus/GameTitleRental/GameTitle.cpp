@@ -1,74 +1,50 @@
-#include "GameTitle.h"
-#include"price.h"
 #include "Customer.h"
-#include "Rental.h"
-#include "RegularPrice.h"
+#include "GameTitle.h"
 
-GameTitle::GameTitle(const std::string& title, int priceCode) : title_(title), price_(nullptr)
+Customer::Customer(const std::wstring& name) : name_(name)
 {
-	setPriceCode(priceCode);
+
 }
 
-double GameTitle::getCharge(int daysRented_) const
+void Customer::addRental(const Rental& rental)
 {
-	double result = 0;
-	//비디오 종류별 대여로 계산
-	switch (getPriceCode())
+	rentals_.push_back(rental);
+}
+
+std::wstring Customer::statement()
+{
+	std::wstring result = getName() + L" 고객님의 대여 기록\n";
+	for (auto& each : rentals_)
 	{
-
-	case GameTitle::POPULAR:
-		result += 2;
-		if (daysRented_ > 2) {
-			result += (daysRented_ - 2) * 1.5;
-		}
-		break;
-
-
-	case GameTitle::REGULAR:
-		result += daysRented_ * 3;
-		break;
-
-	case GameTitle::NEW_RELEASE:
-		result += 1.5;
-		if (daysRented_ > 3) {
-			result += (daysRented_ - 3) * 1.5;
-		}
+		// 비디오 정보 대여료 출력
+		result += L"\t" + each.getGameTitle().getTitle() + L"\t" +
+			std::to_wstring(each.getCharge()) + L"\n";
 	}
 
+	// putter 행 추가
+	result += (L"누적 대여료: " + std::to_wstring(getTotalCharge()) + L"\n");
+	result += (L"적립 포인트: " + std::to_wstring(getTotalFrequentRenterPoints()) + L"\n");
 	return result;
 }
 
-int GameTitle::getFrequentRenterPoints(int dayRented) const {
-
-	//적립 포인트를 1 포인트 증가
-	int frequentRenterPoints = 1;
-	//신작 이틀 이상 대여시 보너스 포인트
-	if ((getPriceCode() == GameTitle::NEW_RELEASE) &&
-		dayRented > 1)
-	{
-		frequentRenterPoints++;
-	}
-
-	return frequentRenterPoints;
-}
-
-void GameTitle::setPriceCode(int priceCode) {
-	switch (priceCode) {
-	case REGULAR:
-		price_ = new RegularPrice();
-		break;
-	case POPULAR:
-		price_ = new PopularPrice();
-		break;
-	case NEW_RELEASE:
-		price_ = new NewReleasPrice();
-		break;
-	default:
-		throw;
-	}
-}
-
-int GameTitle::getPriceCode() const
+double Customer::getTotalCharge() const
 {
-	return price_->getPriceCode();
+	double totalAmount = 0;
+	for (auto& each : rentals_)
+	{
+		totalAmount += each.getCharge();
+	}
+	return totalAmount;
+}
+
+int Customer::getTotalFrequentRenterPoints() const
+{
+	int frequentRenterPoints = 0; // frequent: 빈번한
+
+	for (auto& each : rentals_)
+	{
+		// 적립 포인트를 1 포인트 증가
+		frequentRenterPoints += each.getFrequentRenterPoints();
+	}
+	return frequentRenterPoints;
 }

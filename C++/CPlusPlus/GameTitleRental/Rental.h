@@ -9,9 +9,9 @@ public:
 
 	int getDaysRented() { return daysRented_;  }
 	const GameTitle& getGameTitle() const { return gameTitle_; }
+
 	double getCharge() const;
 	int getFrequentRenterPoints() const;
-
 private:
 	GameTitle gameTitle_;
 	int daysRented_;

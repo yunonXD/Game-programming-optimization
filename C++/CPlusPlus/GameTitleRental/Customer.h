@@ -7,20 +7,18 @@
 class Customer
 {
 public:
-	Customer(const std::string& name);
+	Customer(const std::wstring& name);
 
 	void addRental(const Rental& rental);
 
-	std::string statement();
-	std::string htmlStatement();
+	std::wstring statement();
 
-	const std::string& getName() { return name_; }
+	const std::wstring& getName() { return name_; }
 private:
 	double getTotalCharge() const;
-	int getTotalfrequentRenterPoints() const;
-
+	int getTotalFrequentRenterPoints() const;
 private:
-	std::string name_;
+	std::wstring name_;
 	std::vector<Rental> rentals_;
 };
 
