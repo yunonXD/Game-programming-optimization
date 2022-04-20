@@ -1,50 +1,75 @@
-#include "Customer.h"
 #include "GameTitle.h"
+#include "Price.h"
+#include "RegularPrice.h"
 
-Customer::Customer(const std::wstring& name) : name_(name)
+GameTitle::GameTitle(const std::wstring& title, int priceCode) : title_(title),
+price_(nullptr)
 {
-
+	setPriceCode(priceCode);
 }
 
-void Customer::addRental(const Rental& rental)
-{
-	rentals_.push_back(rental);
-}
 
-std::wstring Customer::statement()
+double GameTitle::getCharge(int daysRented) const
 {
-	std::wstring result = getName() + L" 고객님의 대여 기록\n";
-	for (auto& each : rentals_)
+	double result = 0;
+	// 비디오 종류별 대여료 계산
+	switch (getPriceCode())
 	{
-		// 비디오 정보 대여료 출력
-		result += L"\t" + each.getGameTitle().getTitle() + L"\t" +
-			std::to_wstring(each.getCharge()) + L"\n";
+	case GameTitle::POPULAR:
+		result += 2;
+		if (daysRented > 2) {
+			result += (daysRented - 2) * 1.5;
+		}
+		break;
+
+	case GameTitle::REGULAR:
+		result += daysRented * 3;
+		break;
+
+	case GameTitle::NEW_RELEASE:
+		result += 1.5;
+		if (daysRented > 3)
+		{
+			result += (daysRented - 3) * 1.5;
+		}
 	}
 
-	// putter 행 추가
-	result += (L"누적 대여료: " + std::to_wstring(getTotalCharge()) + L"\n");
-	result += (L"적립 포인트: " + std::to_wstring(getTotalFrequentRenterPoints()) + L"\n");
 	return result;
 }
 
-double Customer::getTotalCharge() const
+int GameTitle::getFrequentRenterPoints(int daysRented) const
 {
-	double totalAmount = 0;
-	for (auto& each : rentals_)
+	// 적립 포인트를 1 포인트 증가
+	int frequentRenterPoints = 1;
+	// 신작 이틀 이상 대여시 보너스 포인트
+	if ((getPriceCode() == GameTitle::NEW_RELEASE) &&
+		daysRented > 1)
 	{
-		totalAmount += each.getCharge();
+		frequentRenterPoints++;
 	}
-	return totalAmount;
+
+	return frequentRenterPoints;
 }
 
-int Customer::getTotalFrequentRenterPoints() const
+void GameTitle::setPriceCode(int priceCode)
 {
-	int frequentRenterPoints = 0; // frequent: 빈번한
-
-	for (auto& each : rentals_)
+	//priceCode_ = priceCode;
+	switch (priceCode)
 	{
-		// 적립 포인트를 1 포인트 증가
-		frequentRenterPoints += each.getFrequentRenterPoints();
+	case REGULAR:
+		price_ = new RegularPrice();
+		break;
+	case POPULAR:
+		price_ = new PopularPrice();
+		break;
+	case NEW_RELEASE:
+		price_ = new NewReleasePrice();
+		break;
+	default:
+		throw;
 	}
-	return frequentRenterPoints;
+}
+
+int GameTitle::getPriceCode() const {
+	return price_->getPriceCode();
 }

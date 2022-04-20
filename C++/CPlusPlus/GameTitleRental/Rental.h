@@ -7,7 +7,7 @@ class Rental
 public:
 	Rental(GameTitle gameTitle, int daysRented);
 
-	int getDaysRented() { return daysRented_;  }
+	int getDaysRented() { return daysRented_; }
 	const GameTitle& getGameTitle() const { return gameTitle_; }
 
 	double getCharge() const;
