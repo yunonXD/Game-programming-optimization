@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Executable>C:\Users\NOW2-210-12\Documents\GitHub\Game-programming-optimization\GoogleMockTest2\Debug\GoogleMockTest2.exe</Executable>
+  <TestDurations>
+    <TestDuration Test="TestCaseName.TestName" Duration="1" />
+    <TestDuration Test="InventoryBasicTest.Create" Duration="1" />
+    <TestDuration Test="InventoryTest2.AddTest2" Duration="1" />
+    <TestDuration Test="InventoryTest2.AddTest3" Duration="1" />
+    <TestDuration Test="InventoryTest.Init1" Duration="1" />
+    <TestDuration Test="InventoryTest.Init2" Duration="1" />
+    <TestDuration Test="InventoryTest.Init3" Duration="1" />
+    <TestDuration Test="InventoryTest.Init4" Duration="1" />
+    <TestDuration Test="Inventory/InventoryItemTest.AddItem/0" Duration="1" />
+    <TestDuration Test="Inventory/InventoryItemTest.AddItem/1" Duration="1" />
+    <TestDuration Test="Inventory/InventoryItemTest.AddItem/2" Duration="1" />
+    <TestDuration Test="Inventory/InventoryItemTest.AddItem/3" Duration="1" />
+    <TestDuration Test="Inventory/InventoryItemTest.AddItem/4" Duration="1" />
+    <TestDuration Test="MockNetInterfaceTest.SomeCalling" Duration="1" />
+  </TestDurations>
+</GtaTestDurations>

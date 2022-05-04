@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoffeeShop", "CoffeeShop\CoffeeShop.vcxproj", "{710066F7-7BD8-42AE-A759-E9AE9FFD250C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Debug|x64.ActiveCfg = Debug|x64
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Debug|x64.Build.0 = Debug|x64
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Debug|x86.ActiveCfg = Debug|Win32
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Debug|x86.Build.0 = Debug|Win32
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Release|x64.ActiveCfg = Release|x64
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Release|x64.Build.0 = Release|x64
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Release|x86.ActiveCfg = Release|Win32
+		{710066F7-7BD8-42AE-A759-E9AE9FFD250C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {377E6890-4D75-449D-8455-6B156A686C98}
+	EndGlobalSection
+EndGlobal
