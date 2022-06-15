@@ -1,7 +1,8 @@
 #include "Timer.h"
 
 
-Timer::Timer() {
+
+Timer::Timer(int timerNo) : timerNo(timerNo) {
 	mStartTime = high_resolution_clock::now();
 }
 
@@ -13,6 +14,6 @@ void Timer::Stop() {
 	auto duration = end - start;
 	double durationMsec = duration * 0.001;
 
-	cout << duration << "us (" << durationMsec << "msec)" << endl;
+	cout << duration << "timerNo (" << durationMsec << "msec)" << endl;
 
 }

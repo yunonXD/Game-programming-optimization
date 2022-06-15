@@ -7,12 +7,13 @@ using namespace std;
 
 class Timer {
 public:
-	Timer();
+	Timer(int timerNo);
 	~Timer() {
 		Stop();
 	}
 	void Stop();
 
 private:
+	const int timerNo;
 	time_point<high_resolution_clock > mStartTime;
 };
